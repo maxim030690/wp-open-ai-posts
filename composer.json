@@ -1,37 +1,43 @@
 {
   "name": "maxim030690/wp-open-ai-posts",
-  "description": "A WordPress plugin to generate posts using the OpenAI API",
+  "description": "A WordPress plugin to generate posts using OpenAI's GPT-3 API.",
   "type": "wordpress-plugin",
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "openai",
+    "gpt-3",
+    "ai",
+    "php 8"
+  ],
+  "homepage": "https://github.com/maxim030690/wp-open-ai-posts",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Maxim Tkachov",
+      "email": "maxim030690@gmail.com"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/maxim030690/wp-open-ai-posts/issues"
+  },
+  "minimum-stability": "stable",
   "require": {
     "php": ">=8.0",
-    "composer/installers": "^2.0",
-    "guzzlehttp/guzzle": "^7.0"
+    "wordpress/wordpress": "^5.6",
+    "wpackagist-plugin/wpackagist-plugin": "^2.0"
   },
   "autoload": {
     "psr-4": {
-      "OpenAIPlugin\\": "wp-open-ai-posts/includes/"
+      "WpOpenAiPosts\\OpenAIPlugin\\": "includes/"
     }
+  },
+  "extra": {
+    "wpackagist-plugin": "wp-open-ai-posts"
   },
   "config": {
-    "preferred-install": "dist",
-    "secure-http": true
-  },
-  "scripts": {
-    "post-install-cmd": [
-      "composer run-script post-create-project-cmd"
-    ],
-    "post-create-project-cmd": [
-      "@php -r \"copy('.env.example', '.env');\""
-    ]
-  },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/maxim030690/wp-open-ai-posts"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/wpackagist/wpackagist"
+    "platform": {
+      "php": "8.0"
     }
-  ]
+  }
 }
